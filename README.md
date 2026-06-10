@@ -1,7 +1,7 @@
 ☕ Café Borvoa - Cardápio Digital
 Bem-vindo ao repositório do Café Borvoa, um cardápio digital interativo e responsivo, desenvolvido para oferecer uma experiência de pedido ágil e visualmente agradável para nossos clientes.
 
-![Preview do Café Borvoa](./src/assets/Café%20Borvoa.png)
+![Preview do Café Borvoa](./src/assets/cafe-borvoa.gif)
 
 🚀 Sobre o Projeto
 O Café Borvoa é uma aplicação web focada em proporcionar um cardápio moderno, onde o cliente pode visualizar categorias (Cafés, Bolos, Salgados), ver detalhes dos produtos e adicionar itens a uma sacola de compras de forma intuitiva.
