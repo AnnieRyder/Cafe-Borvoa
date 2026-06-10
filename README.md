@@ -33,22 +33,24 @@ Context API: Para gerenciamento do estado do carrinho de compras.
 📦 Como rodar o projeto localmente
 Clone o repositório:
 
-Bash
-git clone [link-do-seu-repositorio]
+Markdown
+### 📦 Como rodar o projeto localmente
+
+1. Clone o repositório:
+```bash
+   git clone [https://github.com/AnnieRyder/Cafe-Borvoa.git](https://github.com/AnnieRyder/Cafe-Borvoa.git)
 Entre na pasta do projeto:
 
 Bash
-cd cafe-borvoa
+   cd Cafe-Borvoa
 Instale as dependências:
 
 Bash
-npm install
-# ou
-yarn install
+   npm install
 Inicie o servidor de desenvolvimento:
 
 Bash
-npm run dev
+   npm run devgit add .
 # ou
 yarn dev
 🎨 Design System
