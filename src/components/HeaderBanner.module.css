@@ -1,0 +1,272 @@
+/* src/components/HeaderBanner.module.css */
+.heroContainer {
+  /* O linear-gradient escurece a imagem para o texto branco aparecer bem */
+  background: linear-gradient(rgba(15, 10, 8, 0.7), rgba(15, 10, 8, 0.9)), 
+              url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+  color: var(--white);
+  padding: 30px 80px 120px 80px; /* Muito espaço embaixo para os cards subirem depois */
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Mantém logo na esquerda e .navRight na direita */
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.navRight {
+  display: flex;       /* Faz o grupo da direita ser flex também */
+  align-items: center; /* Alinha o menu e o carrinho verticalmente */
+  gap: 40px;          /* Espaço entre o grupo de links e o botão do carrinho */
+}
+
+.menuBox {
+  width: 100%;
+  max-width: 1200px; /* Mantém o alinhamento centralizado */
+  margin: 0 auto;    /* Centraliza o menu no meio da tela */
+  padding-top: 50px; /* AQUI ESTÁ O SEGREDO: Empurra o menu para baixo do Banner */
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.logoIcon {
+  color: var(--brand-orange);
+}
+
+.navLinks {
+  display: flex;
+  gap: 35px;
+  
+}
+
+.navLinks a {
+  color: #b0a8a5; /* Um cinza puxado pro marrom */
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.navLinks a:hover, .navLinks a.active {
+  color: var(--white);
+  border-bottom: 2px solid var(--brand-orange);
+  padding-bottom: 5px;
+}
+
+.cartBtnTop {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  padding: 10px 18px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cartBtnTop:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.cartBadge {
+  background-color: var(--brand-orange);
+  color: white;
+  border-radius: 50%;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* --- TEXTO PRINCIPAL --- */
+.heroContent {
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+.welcomeText {
+  color: #D2A87A; /* Dourado/Laranja claro */
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.mainTitle {
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  letter-spacing: -2px;
+  font-family: serif; /* Dá aquele ar sofisticado de café */
+}
+
+.subtitle {
+  color: #b0a8a5;
+  font-size: 1.1rem;
+  margin-bottom: 35px;
+}
+
+.ctaButton {
+  background-color: var(--brand-orange);
+  color: var(--white);
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.ctaButton:hover {
+  background-color: #8a5135;
+  transform: scale(1.02);
+}
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 350px; /* Coluna do menu ocupa tudo, carrinho fixa 350px */
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.cartContainer {
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 20px; /* Ele vai grudar 20px abaixo do topo da tela ao rolar */
+  height: fit-content;
+}
+/* src/components/HeaderBanner.module.css */
+
+.cartBtnTop {
+  position: relative; /* Isso é crucial para a bolinha ficar presa ao botão */
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.badge {
+  position: absolute;
+  top: -5px;      /* Joga a bolinha para cima */
+  right: -5px;    /* Joga a bolinha para a direita */
+  background-color: #ff4757; /* Um vermelho/laranja chamativo */
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; /* Deixa perfeitamente redondo */
+  border: 2px solid #2b2b2b; /* Uma bordinha para separar do fundo se precisar */
+}
+
+/* Isso faz a linha marrom aparecer abaixo do link clicado */
+.navLinks a {
+  position: relative;
+  text-decoration: none;
+  color: #666;
+  padding-bottom: 4px;
+}
+
+.navLinks a.active {
+  font-weight: bold;
+}
+
+.navLinks a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #a67c52;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 30px; 
+}
+
+.navLinks {
+  display: flex;
+  gap: 20px;
+}
+
+
+.miniCartDropdown {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  width: 280px;
+  background: white;
+  color: #333;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+/* O header enxuto para as páginas internas */
+.headerSimples {
+  background-color: #ffffff; /* Fundo limpo */
+  border-bottom: 1px solid #efe8e0;
+}
+/* O visual padrão (Gigante) */
+.heroContainer {
+  height: 400px;
+  /* ... seus estilos atuais ... */
+}
+
+/* O estilo que você já tinha (para a Home) */
+/* Definimos a imagem em um lugar só, ou compartilhamos a regra */
+.heroContainer, .headerCompacto {
+  background:linear-gradient(rgba(15, 10, 8, 0.7), rgba(15, 10, 8, 0.9)), 
+              url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=2000&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: height 0.3s ease;
+}
+
+.heroContainer {
+  height: 400px; /* Altura original */
+}
+
+.headerCompacto {
+  height: 150px; /* Altura encolhida */
+}
+
+.navCardapio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;          
+  padding: 30px 5%;    
+  box-sizing: border-box;     
+}

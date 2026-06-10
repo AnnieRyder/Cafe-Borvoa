@@ -1,0 +1,36 @@
+/* src/components/DeliveryInfo.module.css */
+.container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #fff3dc; /* Tom creme */
+  border: 1px solid #928678;
+  padding: 20px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+.iconBox {
+  background: #efe8e0; /* Fundo do ícone */
+  padding: 15px;
+  border-radius: 12px;
+  color: #a67c52;
+}
+
+.textos h4 {
+  margin: 0 0 5px 0;
+  font-size: 0.95rem;
+}
+
+.textos p {
+  margin: 0 0 10px 0;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.link {
+  font-size: 0.8rem;
+  color: #a67c52;
+  font-weight: 600;
+  text-decoration: none;
+}

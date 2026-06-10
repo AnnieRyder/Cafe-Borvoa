@@ -1,0 +1,33 @@
+/* src/components/Footer.module.css */
+.footerContainer {
+  background: #222; /* Cor escura do rodapé */
+  color: #ccc;
+  display: flex;
+  justify-content: space-around;
+  padding: 60px 20px;
+  margin-top: 80px;
+}
+
+.diferencial {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  max-width: 300px;
+}
+
+.diferencial h4 {
+  color: white;
+  margin: 0 0 5px 0;
+  font-size: 1rem;
+}
+
+.diferencial p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.diferencial svg {
+  color: #a67c52; /* Cor do ícone */
+  flex-shrink: 0;
+}

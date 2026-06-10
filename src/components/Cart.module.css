@@ -1,0 +1,177 @@
+/* src/components/Cart.module.css */
+
+.cartContainer {
+  background: #2b2b2b;
+  color: white;
+  padding: 24px;
+  border-radius: 20px;
+  height: fit-content;
+  min-width: 36%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); 
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  margin-top: 80px; 
+}
+
+
+/* Header do Carrinho */
+.cartHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #e4d5c7; /* Cor que puxa pro tom de café da imagem */
+  margin-bottom: 30px;
+}
+
+.cartTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Itens da Lista */
+.cartItem {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #3d3d3d;
+}
+
+.miniImg {
+  width: 55px;
+  height: 55px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.itemInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.itemName {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Botões de + e - (O segredo da 2ª imagem) */
+.controls {
+  display: flex;
+  align-items: center;
+  background: #383838; /* Fundo escuro */
+  border: 1px solid #4a4a4a; /* Borda sutil */
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.controlBtn {
+  background: transparent;
+  border: none;
+  color: #a0a0a0;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: 0.2s;
+}
+
+.controlBtn:hover {
+  color: #ffffff;
+  background: #4a4a4a;
+}
+
+.qtd {
+  font-size: 0.9rem;
+  padding: 0 5px;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Preço e Botão X */
+.priceAndRemove {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
+}
+
+.removeBtn {
+  background: transparent;
+  border: none;
+  color: #a0a0a0;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.removeBtn:hover {
+  color: #ff6b6b;
+}
+
+.price {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Resumo de Valores */
+.resumo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: #c0c0c0;
+  margin-bottom: 20px;
+}
+
+.linha {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Total com Linha Separadora */
+.totalSection {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffffff;
+  border-top: 1px solid #4a4a4a; /* A linha que separa o subtotal do total */
+  padding-top: 20px;
+  margin-bottom: 25px;
+}
+
+/* Finalizar Pedido */
+.checkoutBtn {
+  width: 100%;
+  background: #a67c52;
+  color: white;
+  padding: 16px;
+  border-radius: 12px;
+  border: none;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.checkoutBtn:hover {
+  background: #8e6843;
+}
+
+/* Segurança Menor com Ícone */
+.seguranca {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 15px;
+  color: #888888;
+  font-size: 0.75rem; /* Letra bem menorzinha */
+}
+
+.seguranca p {
+  margin: 0;
+}
