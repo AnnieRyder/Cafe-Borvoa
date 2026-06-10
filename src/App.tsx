@@ -1,5 +1,4 @@
 // src/App.tsx
-import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Menu } from './components/Menu';
 import { Cart } from './components/Cart';
@@ -10,6 +9,7 @@ import { useCart } from './components/contexts/CartContext';
 import './components/responsive.css';
 import type { ItemMenu } from './types/menu';
 import { motion } from 'framer-motion';
+import { menuData } from './utils/menuData';
 import { Cake, Coffee, Croissant, CupSoda, BadgePercent, Truck, CheckCircle, ShieldCheck, Star, Plus, LayoutGrid } from 'lucide-react';
 
 // --- COMPONENTES AUXILIARES ---
@@ -39,7 +39,7 @@ function App() {
   const [telaAtual, setTelaAtual] = useState<'home' | 'cardapio' | 'sobre' | 'contato'>('home');
   const [mostrarSplash, setMostrarSplash] = useState(true);
   const [iniciarSaida, setIniciarSaida] = useState(false);
-  const [prontoParaAnimar, setProntoParaAnimar] = useState(false); // NOVO: Controla quando animar
+  const [prontoParaAnimar, setProntoParaAnimar] = useState(false); 
   const [carrinhoAberto, setCarrinhoAberto] = useState(false);
   const [categoriaAtiva, setCategoriaAtiva] = useState<string>('Todos');
   const [carregando, setCarregando] = useState(true);
@@ -48,15 +48,16 @@ function App() {
   // Usando o contexto para a Home (Destaques)
   const { adicionarAoCarrinho } = useCart();
 
-  // 2. CONSUMO DA API
+  // 2. CARREGAMENTO DOS DADOS LOCAIS (Substituindo a API)
   useEffect(() => {
-   axios.get('http://192.168.3.183:3002/produtos')
-      .then(response => {
-        setProdutos(response.data);
-      })
-      .catch(error => {
-        console.error("Erro ao buscar produtos da API:", error);
-      });
+    // Simulando um tempo de rede de 1 segundo para mostrar a animação de carregamento
+  const timer = setTimeout(() => {
+      // Adicionamos "as ItemMenu[]" para garantir o tipo correto
+      setProdutos(menuData.produtos as ItemMenu[]); 
+      setCarregando(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   // 3. EFEITOS (useEffect)
@@ -81,10 +82,6 @@ function App() {
     };
     document.title = `Café Borvoa | ${titulos[telaAtual]}`;
   }, [telaAtual]);
-
-  useEffect(() => {
-    setTimeout(() => setCarregando(false), 3000);
-  }, []);
 
   // 4. VARIANTES DE ANIMAÇÃO
   const containerVariants = {

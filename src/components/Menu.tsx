@@ -5,7 +5,6 @@ import { useCart } from './contexts/CartContext';
 import './responsive.css';
 import type { ItemMenu } from '../types/menu';
 
-// 2. Criamos um array de objetos para representar cada filtro
 const categorias = [
   { id: 'todos', nome: 'Todos', icon: LayoutGrid },
   { id: 'bolos', nome: 'Bolos', icon: Cake },
@@ -15,8 +14,7 @@ const categorias = [
 ];
 
 interface MenuProps {
-  produtos: ItemMenu[];
-  // Removido o onAdicionar daqui, pois ele vem do useCart agora!
+  produtos: ItemMenu[]; // Aqui chegam os produtos que você importa no App.tsx
 }
 
 export const Menu = ({ produtos }: MenuProps) => {
@@ -47,33 +45,33 @@ export const Menu = ({ produtos }: MenuProps) => {
         })}
       </div>
 
- <div id="cardapio-vertical" className={`${styles.gridProdutos} lista-vertical`}>
-  {produtosFiltrados.map((item) => (
-    <div key={item.id} className={`${styles.cardProduto} card-vertical`}>
-      <img src={item.imagem} alt={item.nome} className={styles.imgProduto} />
-      
-      <div className={styles.conteudoCard}>
-        <div className={styles.infoProduto}>
-          <h3>{item.nome}</h3>
-          <p className="descricao-para-esconder">{item.descricao}</p> {/* Adicionamos esta classe aqui */}
-        </div>
-        
-        <div className={styles.precoEBotao}>
-          <span className={styles.preco}>R$ {item.preco.toFixed(2)}</span>
-          <button onClick={() => adicionarAoCarrinho(item)} className={styles.addBtn}>
-            <Plus size={20} />
-          </button>
-        </div>
+      <div id="cardapio-vertical" className={`${styles.gridProdutos} lista-vertical`}>
+        {produtosFiltrados.map((item) => (
+          <div key={item.id} className={`${styles.cardProduto} card-vertical`}>
+            <img src={item.imagem} alt={item.nome} className={styles.imgProduto} />
+            
+            <div className={styles.conteudoCard}>
+              <div className={styles.infoProduto}>
+                <h3>{item.nome}</h3>
+                <p className="descricao-para-esconder">{item.descricao}</p>
+              </div>
+              
+              <div className={styles.precoEBotao}>
+                <span className={styles.preco}>R$ {item.preco.toFixed(2)}</span>
+                <button onClick={() => adicionarAoCarrinho(item)} className={styles.addBtn}>
+                  <Plus size={20} />
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
-    </div>
-  ))}
-</div>
 
-      {/* RODAPÉ CARINHOSO */}
       <footer className={styles.footerMenu}>
-        <p> <Heart size={16} className={styles.iconHeart} /> 
-    Todos os produtos são feitos com ingredientes selecionados e muito carinho.
-  </p>
+        <p> 
+          <Heart size={16} className={styles.iconHeart} /> 
+          Todos os produtos são feitos com ingredientes selecionados e muito carinho.
+        </p>
       </footer>
     </main>
   );
